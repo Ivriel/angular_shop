@@ -14,7 +14,7 @@ export interface Products {
     dimensions: {
         width:number;
         height:number;
-        dept:number
+        depth:number
     }
     warrantyInformation: string;
     shippingInformation:string;

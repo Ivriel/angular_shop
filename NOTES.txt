@@ -1,0 +1,9 @@
+Versi	Cocok Saat	Kelemahan
+snapshot	Route param tidak berubah di komponen itu	Tidak update kalau param berubah tanpa reload
+subscribe	Route param bisa berubah tanpa reload	Lebih verbose sedikit, tapi aman
+
+Jadi snapshot itu patokannya dipakai ketika pakai parameter dan membuatnya pindah halaman, artinya dia tidak berubah di komponen itu tapi di komponen lain
+makanya dia mereload ulang komponennya setiap kali pindah
+
+kalau subscribe biasa, dia berubah di komponen itu sendiri, artinya dia tidak berubah di komponen lain, tapi hanya berubah di komponen itu sendiri 
+dan komponennya tidak di reload
