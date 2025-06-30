@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductReviews } from '../../models/product';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-reviews',
@@ -11,9 +12,12 @@ import { ProductReviews } from '../../models/product';
   styleUrl: './reviews.component.css'
 })
 export class ReviewsComponent implements OnInit{
-constructor(private route:ActivatedRoute, private productService:ProductService){}
+constructor(private route:ActivatedRoute, private productService:ProductService,private title:Title){
+  this.title.setTitle('Reviews')
+}
 productId!:number; // nyimpan id dari url
 reviews:ProductReviews[]=[]
+
 
 ngOnInit(): void {
     this.route.paramMap.subscribe(params=> { //ambil id (params) dari url 
