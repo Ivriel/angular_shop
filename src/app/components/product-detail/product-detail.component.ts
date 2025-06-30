@@ -15,7 +15,7 @@ export class ProductDetailComponent implements OnInit{
   product:any;
   constructor(private productService:ProductService, private route:ActivatedRoute, private title:Title){}
 
-  ngOnInit(): void {
+  ngOnInit(): void { // pakai snapshot karena id nya ga berubah selama komponen belum ditutup. ambil satu kali saja nilai params dari url saat komponen pertama kali dibuat. ng on init akan dipanggil ulang 
       const id = Number(this.route.snapshot.paramMap.get('id')) // buat ngambil id dari url terus dikirim ke parameter
       this.productService.getById(id).subscribe((res:any)=> {
         this.product = res

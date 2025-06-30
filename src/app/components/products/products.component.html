@@ -1,3 +1,9 @@
+     <a routerLink="/products">All</a>
+@for (category of categories; track $index) {
+    <a [routerLink]="['/products/category',category.slug]">
+        {{category.name}}
+    </a>
+}
 <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 @for (product of products; track product.id) {
 

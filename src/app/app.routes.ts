@@ -20,5 +20,9 @@ export const routes: Routes = [
     {
         path:'products/:id',
         component:ProductDetailComponent
+    },
+    {
+        path:'products/category/:category',
+        component:ProductsComponent
     }
 ];
