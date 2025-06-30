@@ -1,0 +1,11 @@
+<div class="mt-4 mb-2 p-4 border rounded bg-gray-100">
+  <h3 class="font-bold text-lg mb-3">Ulasan Produk</h3>
+
+  <div *ngIf="reviews.length === 0" class="text-gray-500">Belum ada review.</div>
+
+  <div *ngFor="let review of reviews" class="mb-4 p-3 bg-white rounded shadow">
+    <p class="text-sm text-gray-700 italic">“{{review.comment}}”</p>
+    <p class="text-sm font-semibold text-blue-600 mt-2">— {{review.reviewerName}}</p>
+    <p class="text-sm text-yellow-600">Rating: {{review.rating}}/5</p>
+  </div>
+</div>

@@ -7,13 +7,16 @@
     <img [src]="product.meta.qrCode" alt="Product QR Code" class="size-40">
     </div>
     <p class="text-center"><span class="font-bold">SKU:</span> {{product.sku}} </p>
+    <hr/>
     <p class="flex flex-wrap text-justify">
         <span class="font-bold mr-1 whitespace-nowrap">Deskripsi: </span>
         <span class="flex-1 text-justify">{{product.description}}</span>
     </p>
+    <hr/>
     <p>
         <span class="font-bold">Rating: </span> {{product.rating}}
     </p>
+    <hr/>
     <div class="grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16 text-gray-800 place-items-start">
         <div class="self-start">
             <p>
@@ -43,16 +46,18 @@
             <p><span class="font-bold">Return Policy: </span> {{product.returnPolicy }} </p>
         </div>
     </div>
+    <hr/>
     <div class="flex justify-between">
-         <button title="previous product" *ngIf="id !== 1" (click)="previousProduct()"  class="text-blue-500 cursor-pointer">
-        Previous Product
+         <button title="previous product" *ngIf="id !== 1" (click)="previousProduct()"  class="text-blue-500 cursor-pointer hover:text-gray-400">
+        Previous 
     </button>
-    <a routerLink="/products" class="text-blue-500 hover:text-blue-700" title="back to product page">Back to product page</a>
-        <button *ngIf="id !== maxId" (click)="nextProduct()" class="text-blue-500 cursor-pointer" title="next product">
-        Next Product
+    <p *ngIf="id==maxId" class="text-red-500"><strong>End of Product</strong></p>
+    <a routerLink="/products" class="text-blue-500  hover:text-gray-400" title="back to product page">product page</a>
+        <button *ngIf="id !== maxId" (click)="nextProduct()" class="text-blue-500 cursor-pointer hover:text-gray-400" title="next product">
+        Next 
     </button>
     </div>
     <a routerLink="" title="Tambah ke keranjang" class=" text-center block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-6">Add To Cart</a>
-
 </div>
+<app-reviews></app-reviews>
 }

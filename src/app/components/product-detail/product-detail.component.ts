@@ -5,9 +5,11 @@ import { Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NodataPipe } from '../../pipes/nodata.pipe';
 import { Products } from '../../models/product';
+import { ReviewsComponent } from '../reviews/reviews.component';
+
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink, CommonModule, NodataPipe],
+  imports: [RouterLink, CommonModule, NodataPipe,ReviewsComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })

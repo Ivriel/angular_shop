@@ -18,10 +18,14 @@ export class ProductService {
   }
 
   getByCategory(category:string) {
-    return this.http.get<any>(`${this.apiUrl}/category/${category}`)
+    return this.http.get<string>(`${this.apiUrl}/category/${category}`)
   }
 
   getCategories(){
     return this.http.get<Categories[]>(this.apiUrlCategories)
+  }
+
+  getReviewsByProductId(id:number){
+    return this.http.get<any>(`${this.apiUrl}/${id}`) //ambil produk dulu berdasarkan id baru nanti di review component ambil review
   }
 }
