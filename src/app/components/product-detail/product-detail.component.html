@@ -48,7 +48,7 @@
         Previous Product
     </button>
     <a routerLink="/products" class="text-blue-500 hover:text-blue-700" title="back to product page">Back to product page</a>
-        <button (click)="nextProduct()" class="text-blue-500 cursor-pointer" title="next product">
+        <button *ngIf="id !== maxId" (click)="nextProduct()" class="text-blue-500 cursor-pointer" title="next product">
         Next Product
     </button>
     </div>

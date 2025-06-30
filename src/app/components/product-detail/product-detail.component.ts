@@ -14,9 +14,15 @@ import { Products } from '../../models/product';
 export class ProductDetailComponent implements OnInit {
   product!: Products; // buat detail produk
   id!:number; // params dari url
+  maxId!:number;
   constructor(private productService: ProductService, private router: Router, private title: Title,private route:ActivatedRoute) { }
 
-  ngOnInit(): void { // pakai snapshot karena id nya ga berubah selama komponen belum ditutup. ambil satu kali saja nilai params dari url saat komponen pertama kali dibuat. ng on init akan dipanggil ulang  
+  ngOnInit(): void { 
+
+    this.productService.getProducts().subscribe((res:any)=> {
+      this.maxId = res.total
+    })
+
     this.route.paramMap.subscribe(params=> {
       this.id = Number(params.get('id'))
       this.getProduct(this.id)
@@ -24,8 +30,14 @@ export class ProductDetailComponent implements OnInit {
   }
 
   getProduct(id:number){
-    this.productService.getById(id).subscribe(res=> {
-      this.product= res
+    this.productService.getById(id).subscribe({
+      next:(res:any)=> {
+        this.product = res
+        this.title.setTitle(this.product.title)
+      },
+      error:(err)=> {
+        this.router.navigate(['/notfound'])
+      }
     })
   }
 
