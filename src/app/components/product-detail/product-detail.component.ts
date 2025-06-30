@@ -3,10 +3,11 @@ import { ProductService } from '../../services/product.service';
 import { ActivatedRoute,RouterLink } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { NodataPipe } from '../../pipes/nodata.pipe';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink,CommonModule,NodataPipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })

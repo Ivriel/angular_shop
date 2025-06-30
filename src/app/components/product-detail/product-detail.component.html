@@ -3,11 +3,18 @@
 <div class="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-2xl space-y-4 mb-2">
     <h1 class="font-bold text-center text-3xl">{{product.title}}</h1>
     <img [src]="product.thumbnail" [alt]="product.title" class="w-full h-64 object-contain rounded">
+        <div class="flex justify-center">
+    <img [src]="product.meta.qrCode" alt="Product QR Code" class="size-40">
+    </div>
+    <p class="text-center"><span class="font-bold">SKU:</span> {{product.sku}} </p>
     <p class="flex flex-wrap text-justify">
         <span class="font-bold mr-1 whitespace-nowrap">Deskripsi: </span>
         <span class="flex-1 text-justify">{{product.description}}</span>
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-16 text-gray-800 place-items-start">
+    <p>
+        <span class="font-bold">Rating: </span> {{product.rating}}
+    </p>
+    <div class="grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16 text-gray-800 place-items-start">
         <div class="self-start">
             <p>
                 <span class="font-bold">Category: </span> {{product.category}}
@@ -20,7 +27,7 @@
             <p> <span class="font-bold">Stock:</span> {{product.stock}} </p>
         </div>
         <div class="self-start">
-            <p> <span class="font-bold">Brand: </span> {{product.brand}} </p>
+            <p> <span class="font-bold">Brand: </span> {{product.brand | nodata}} </p>
         </div>
 
         <div class="flex flex-wrap text-justify">
@@ -32,6 +39,10 @@
         </ul>
         </div>
 
+        <div class="self-start">
+            <p><span class="font-bold">Return Policy: </span> {{product.returnPolicy }} </p>
+        </div>
     </div>
+
 </div>
 }

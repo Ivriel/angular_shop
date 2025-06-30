@@ -3,13 +3,13 @@
 
    <div class="bg-white rounded-xl shadow p-4">
       <h1 class="text-center font-bold text-[16px] mb-2">{{product.title}}</h1>
-      <img [src]="product.images" [alt]="product.title" class="w-full h-[350px] object-cover rounded">
+      <img [src]="product.thumbnail" [alt]="product.title" class="w-full h-[350px] object-cover rounded">
       <div class="mt-3">
  <p> <span class="font-bold">Brand - category:</span> {{product.brand}} - {{product.category}}</p>
       <p> <span class="font-bold">Harga:</span> {{product.price | currency:'USD '}}</p>
       <p> <span class="font-bold">Rating:</span> {{product.rating}}</p>
       </div>
-        <a [routerLink]="['/products',product.id]" class="mt-2 bg-blue-500 block text-center text-white w-full rounded py-2 hover:bg-blue-400">Lihat Detail</a>
+        <a title="Lihat detail produk" [routerLink]="['/products',product.id]" class="mt-2 bg-blue-500 block text-center text-white w-full rounded py-2 hover:bg-blue-400">Lihat Detail</a>
    </div>
 }
 </div>
