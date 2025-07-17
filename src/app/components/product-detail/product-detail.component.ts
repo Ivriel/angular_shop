@@ -35,7 +35,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getById(id).subscribe({
       next:(res:any)=> {
         this.product = res
-        this.title.setTitle(this.product.title)
+        this.title.setTitle(`Product - ${this.product.title}`)
       },
       error:(err)=> {
         this.router.navigate(['/notfound'])

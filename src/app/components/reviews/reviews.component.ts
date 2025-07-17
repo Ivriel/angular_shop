@@ -12,9 +12,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './reviews.component.css'
 })
 export class ReviewsComponent implements OnInit{
-constructor(private route:ActivatedRoute, private productService:ProductService,private title:Title){
-  this.title.setTitle('Reviews')
-}
+constructor(private route:ActivatedRoute, private productService:ProductService){}
 productId!:number; // nyimpan id dari url
 reviews:ProductReviews[]=[]
 
